@@ -1,0 +1,13 @@
+__pycache__/
+
+venv/
+
+.git/
+.gitignore
+
+*.md
+
+*.log
+
+Dockerfile
+.dockerignore
