@@ -59,7 +59,8 @@ if __name__ == "__main__":
                 [
                     "/usr/local/bin/nsjail",
                     "--config", self.__nsjail_config,
-                    "--bindmount", f"{script_path}:/tmp/script.py" # binds the script into the jail, so it can be executed
+                    # binds the script into the jail, so it can be executed
+                    "--bindmount", f"{script_path}:/tmp/script.py"
                 ],
                 capture_output=True,
                 text=True,

@@ -2,8 +2,24 @@
 
 # GENERATED
 
+# Check for --local flag
+USE_LOCAL=false
+for arg in "$@"; do
+    if [ "$arg" = "--local" ]; then
+        USE_LOCAL=true
+        break
+    fi
+done
+
 # Configuration
-BASE_URL="http://localhost:8080"
+if [ "$USE_LOCAL" = true ]; then
+    BASE_URL="http://localhost:8080"
+else
+    BASE_URL="https://jm-stacksync-1043345859573.europe-central2.run.app"
+fi
+
+echo "Using base URL: $BASE_URL"
+
 ENDPOINT="/execute"
 URL="${BASE_URL}${ENDPOINT}"
 
